@@ -1,0 +1,93 @@
+{
+    "nivelDeEnsino": [
+        {
+            "id": 1,
+            "description": "Tudo"
+        },
+        {
+            "id": 2,
+            "description": "Superior em Tecnologia"
+        },
+        {
+            "id": 3,
+            "description": "Bacharelado"
+        },
+        {
+            "id": 4,
+            "description": "Especialização"
+        }
+    ],
+
+    "cursosIFMS": [
+        {
+            "id": 1,
+            "curso": "Análise e Desenvolvimento de Sistemas",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Naviraí"
+        },
+        {
+            "id": 2,
+            "curso": "Agronomia",
+            "nivelDeEnsino": "Bacharelado",
+            "duracao": "5 anos",
+            "municipio": "Naviraí"
+        },
+        {
+            "id": 3,
+            "curso": "Docência para Educação Profissional, Científica e Tecnológica",
+            "nivelDeEnsino": "Especialização",
+            "duracao": "2 anos",
+            "municipio": "Naviraí"
+        },
+        {
+            "id": 4,
+            "curso": "Produção de Grãos",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Nova Andradina"
+        },
+        {
+            "id": 5,
+            "curso": "Agronegócio",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Ponta Porã"
+        },
+        {
+            "id": 6,
+            "curso": "Alimentos",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Coxim"
+        },
+        {
+            "id": 7,
+            "curso": "Automação Industrial",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Três Lagoas"
+        },
+        {
+            "id": 8,
+            "curso": "Jogos Digitais",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Dourados"
+        },
+        {
+            "id": 9,
+            "curso": "Processos Metálurgicos",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Corumbá"
+        },
+        {
+            "id": 10,
+            "curso": "Redes de Computadores",
+            "nivelDeEnsino": "Superior em Tecnologia",
+            "duracao": "3 anos",
+            "municipio": "Aquidauana"
+        }
+    ]
+}
