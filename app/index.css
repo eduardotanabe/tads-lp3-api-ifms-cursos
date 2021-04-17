@@ -27,6 +27,22 @@ h1 {
     
 }
 
+.buscar {
+    display: flex;
+}
+
+.btn-buscar {
+    margin-left: 5px;
+}
+
+.spinner {
+    margin-top: 8%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
 .cursos {
     padding: 3%;
 }
+
