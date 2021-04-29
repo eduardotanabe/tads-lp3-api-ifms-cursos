@@ -1,3 +1,6 @@
+import getData from "./modules/comunicacao-com-api"
+import renderCards from "./modules/render-cards"
+
 const apiData = document.querySelector(".cursos")
 const listaSuspensa = document.querySelector("#listaSuspensa")
 const spinner = document.querySelector('.spinner-border')
@@ -5,26 +8,17 @@ const spinner = document.querySelector('.spinner-border')
 spinner.style.display = "none"
 
 async function listarCursos() {
-    const url = "http://localhost:3000/cursosIFMS"
     spinner.style.display = "block"
-    const response = await axios.get(url)
+    const response = await getData("cursosIFMS")
     spinner.style.display = "none"
-    const cursos = response.data
+    const cursos = Array.from(response.data)
+    renderCards(cursos)
     
-    cursos.forEach(curso => {
-        apiData.innerHTML += `
-            <h2>${curso.curso}</h2>
-            <p>Nível de ensino: ${curso.nivelDeEnsino} </p>
-            <p>Duração: ${curso.duracao}</p>
-            <p>Município: ${curso.municipio}</p>
-            `
-        });
     }
 
     async function getNivelDeEnsino() {
-    const url = 'http://localhost:3000/nivelDeEnsino'
     spinner.style.display = "block"
-    const response = await axios.get(url)
+    const response = await getData("nivelDeEnsino")
     spinner.style.display = "none"
     const nivelDeEnsino = Array.from(response.data)
 
@@ -39,21 +33,12 @@ async function search(query) {
         return listarCursos()
     }
 
-    const url = `http://localhost:3000/cursosIFMS?q=${query}`
     spinner.style.display = "block"
-    const response = await axios.get(url)
+    const response = await getData(`cursosIFMS?q=${query}`)
     spinner.style.display = "none"
     const cursos = Array.from(response.data)
-
-    apiData.innerHTML = ""
-    cursos.forEach(curso => {
-        apiData.innerHTML += `
-            <h2>${curso.curso}</h2>
-            <p>Nível de ensino: ${curso.nivelDeEnsino} </p>
-            <p>Duração: ${curso.duracao}</p>
-            <p>Município: ${curso.municipio}</p>
-        `
-    })
+    renderCards(cursos)
+    
 }
 
 const btnBuscar = document.querySelector('.btn')
