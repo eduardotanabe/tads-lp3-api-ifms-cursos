@@ -1,5 +1,5 @@
-import getData from "./modules/comunicacao-com-api"
-import renderCards from "./modules/render-cards"
+import getData from "./modules/comunicacao-com-api.js"
+import renderCards from "./modules/render-cards.js"
 
 const apiData = document.querySelector(".cursos")
 const listaSuspensa = document.querySelector("#listaSuspensa")
@@ -12,7 +12,7 @@ async function listarCursos() {
     const response = await getData("cursosIFMS")
     spinner.style.display = "none"
     const cursos = Array.from(response.data)
-    renderCards(cursos)
+    renderCards(cursos, apiData)
     
     }
 
@@ -37,7 +37,7 @@ async function search(query) {
     const response = await getData(`cursosIFMS?q=${query}`)
     spinner.style.display = "none"
     const cursos = Array.from(response.data)
-    renderCards(cursos)
+    renderCards(cursos, apiData)
     
 }
 
