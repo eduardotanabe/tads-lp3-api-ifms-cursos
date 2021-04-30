@@ -37,6 +37,15 @@ async function search(query) {
     const response = await getData(`cursosIFMS?q=${query}`)
     spinner.style.display = "none"
     const cursos = Array.from(response.data)
+    
+    if(cursos.length === 0) {
+        return (apiData.innerHTML = `
+            <div class="alert alert-warning" role="alert">
+                Nenhum resultado encontrado para "${query}"
+            </div>
+            `
+        )}
+    
     renderCards(cursos, apiData)
     
 }
